@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Prefabs/Froggy.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 8 )
+
+[node name="FightArena" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Froggy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 24 )
+team = "green"
+player_number = 2
+
+[node name="Froggy2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 220, 92 )
+team = "black"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 128, 184 )
+shape = SubResource( 1 )
