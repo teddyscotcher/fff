@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/DestroyOnTimer.gd" type="Script" id=1]
+
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.211009, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.977064, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="SnowballExplode" type="CPUParticles2D"]
+amount = 5
+lifetime = 0.5
+explosiveness = 0.79
+spread = 180.0
+initial_velocity = 17.39
+scale_amount_curve = SubResource( 1 )
+script = ExtResource( 1 )
